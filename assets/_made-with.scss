@@ -1,16 +1,17 @@
 @font-face {
-  font-family: 'Vigotech';
-  src:  url('fonts/vigotech.eot?qv79y9');
-  src:  url('fonts/vigotech.eot?qv79y9#iefix') format('embedded-opentype'),
-  url('fonts/vigotech.ttf?qv79y9') format('truetype'),
-  url('fonts/vigotech.woff?qv79y9') format('woff'),
-  url('fonts/vigotech.svg?qv79y9#icomoon') format('svg');
+  font-family: '';
+  src: url('fonts/vigotech.eot?qv79y9');
+  src: url('fonts/vigotech.eot?qv79y9#iefix') format('embedded-opentype'),
+    url('fonts/vigotech.ttf?qv79y9') format('truetype'),
+    url('fonts/vigotech.woff?qv79y9') format('woff'),
+    url('fonts/vigotech.svg?qv79y9#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="vt-"], [class*=" vt-"] {
-  font-family: 'Vigotech' !important;
+[class^='vt-'],
+[class*=' vt-'] {
+  font-family: '' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -21,14 +22,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .vt-pinecone:before {
-  content: "\e900";
+  content: '\e900';
 }
 
-
-
-.vigotech-claim {
+.claim {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color: #666;
@@ -38,7 +36,6 @@
   position: relative;
   padding-bottom: 2px;
 
-
   &:before {
     content: '';
     position: absolute;
@@ -47,7 +44,7 @@
     bottom: 0;
     height: 2px;
     background: #000;
-    @include transition(all, .4s);
+    @include transition(all, 0.4s);
   }
 
   .vt-pinecone {
@@ -55,20 +52,20 @@
     font-size: 20px;
   }
 
-  strong{
+  strong {
     font-weight: 500;
     color: #000;
-    @include transition(all, .4s);
+    @include transition(all, 0.4s);
   }
 
-  &.vigotech-dark {
+  &.dark {
     color: #eaeaea;
-    strong{
+    strong {
       color: #fff;
     }
   }
 
-  &:hover{
+  &:hover {
     strong {
       color: $primary-color;
     }

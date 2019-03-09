@@ -17,7 +17,8 @@
     width: 200px;
     display: block;
   }
-  h1, h2 {
+  h1,
+  h2 {
     color: $white;
     text-align: center;
   }
@@ -43,8 +44,8 @@
   .down-wrapper {
     text-align: center;
     .down {
-      @include transition(all, .2s);
-      color: rgba($white, .5);
+      @include transition(all, 0.2s);
+      color: rgba($white, 0.5);
       font-size: 80px;
       &:hover {
         color: rgba($white, 1);
@@ -53,7 +54,7 @@
     }
   }
 
-  .vigotech-next-event {
+  .next-event {
     max-width: 600px;
     background: $white;
     padding: 15px;
@@ -61,7 +62,7 @@
     h4 {
       margin-bottom: 15px;
       strong {
-        color: $primary-color
+        color: $primary-color;
       }
     }
 
@@ -87,7 +88,8 @@
       padding: 10px 0 0 15px;
       color: $black;
 
-      h5, h6 {
+      h5,
+      h6 {
         font-size: 16px;
       }
 

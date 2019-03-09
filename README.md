@@ -1,10 +1,10 @@
-# vigotech.github.io
+# corunadevelopers.github.io
 
-> VigoTech Alliance Website
+> Coruña Developers Website
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -22,8 +22,8 @@ $ yarn run generate
 
 ## Instruccións para engadir información
 
-En primeiro lugar para engadir ou editar un membro o grupo, debe modificarse únicamente *static/vigotech.json*
-Este fichero ten un *schema* no fichero *static/vigotech-schema.json* cando se xere a parte de front mediante ```yarn prepare``` este validarase polo que debe asegurarse que estea correcto.
+En primeiro lugar para engadir ou editar un membro o grupo, debe modificarse únicamente _static/members.json_
+Este fichero ten un _schema_ no fichero _static/members-schema.json_ cando se xere a parte de front mediante `yarn prepare` este validarase polo que debe asegurarse que estea correcto.
 
 A estructura dun membro (como exemplo collemos un existente) é:
 
@@ -50,16 +50,19 @@ A estructura dun membro (como exemplo collemos un existente) é:
     }
 ```
 
-O apartado *events* pode ter duas formas
+O apartado _events_ pode ter duas formas
 
-* Para eventos que se extraen mediante a api de Meetup
+- Para eventos que se extraen mediante a api de Meetup
+
 ```
 "events": {
   "type": "meetup",
   "meetupid": "AIndustriosa"
 }
 ```
-* Ou para eventos extraido dun json externo
+
+- Ou para eventos extraido dun json externo
+
 ```
 "events": {
   "type": "json",
@@ -67,8 +70,8 @@ O apartado *events* pode ter duas formas
 },
 ```
 
-
 Coa forma
+
 ```
 {
     "title": "Reunión del Grupo el 18/11/2018",
@@ -77,7 +80,3 @@ Coa forma
 }
 
 ```
-
-
-
-

@@ -4,33 +4,18 @@
       <div class="row">
         <div class="col-xs-12 content-wrapper">
           <div class="content">
-            <img
-              src="logo_white.jpg"
-              alt="Vigo Tech Alliance"
-              class="logo"
-            >
-            <h1>
-              Vigo Tech Alliance
-            </h1>
+            <img src="logo_white.jpg" alt="Vigo Tech Alliance" class="logo">
+            <h1>Vigo Tech Alliance</h1>
 
-            <h2>
-              Os grupos de tecnoloxía de Vigo facemos piña para promover a tecnoloxía na cidade
-            </h2>
+            <h2>Os grupos de tecnoloxía de Vigo facemos piña para promover a tecnoloxía na cidade</h2>
 
             <no-ssr>
-              <VigotechNextEvent
-                v-if="nextEvents.length > 0"
-                :next-events="nextEvents"
-              />
+              <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
             </no-ssr>
 
             <div class="down-wrapper">
-              <a
-                v-scroll-to="'#grupos'"
-                href="#"
-                class="down"
-              >
-                <i class="fa fa-chevron-down" />
+              <a v-scroll-to="'#grupos'" href="#" class="down">
+                <i class="fa fa-chevron-down"/>
               </a>
             </div>
           </div>
@@ -41,18 +26,20 @@
 </template>
 
 <script>
-  import VigotechNextEvent from "./VigotechNextEvent";
-  export default {
-    name: 'CoverSection',
-    components: {
-      VigotechNextEvent
-    },
-    props: {
-      nextEvents: {
-        type: [Array],
-        required: false,
-        default: () => {return []}
+import NextEvent from "./NextEvent";
+export default {
+  name: "CoverSection",
+  components: {
+    NextEvent
+  },
+  props: {
+    nextEvents: {
+      type: [Array],
+      required: false,
+      default: () => {
+        return [];
       }
     }
   }
+};
 </script>
