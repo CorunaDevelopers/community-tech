@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CoverSection :next-events="nextEvents" class="page-section"/>
+    <CoverSection :next-events="nextEvents" :texts="texts" class="page-section"/>
     <MembersSection :members-structure="membersStructure" class="page-section"/>
     <CalendarSection class="page-section red-bg"/>
 
@@ -18,7 +18,7 @@ import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
 import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
-  import Texts from '../static/custom/coruna'
+import Texts from '../static/custom/coruna'
 
 export default {
   components: {
@@ -50,9 +50,9 @@ export default {
     nextEvents() {
       return this.$store.getters.nextEvents;
     },
-      texts() {
-        return Texts.coverSection
-      }
+    texts() {
+      return Texts.coverSection
+    }
   },
   watch: {
     membersStructureStore(newValue, oldValue) {
