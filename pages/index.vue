@@ -1,100 +1,85 @@
 <template>
   <div>
-    <CoverSection
-      :next-events="nextEvents"
-      :texts="texts"
-      class="page-section"
-    />
-    <VigotechMembersSection
-      :vigotech-structure="vigotechStructure"
-      class="page-section"
-    />
+    <CoverSection :next-events="nextEvents" class="page-section"/>
+    <MembersSection :members-structure="membersStructure" class="page-section"/>
     <CalendarSection class="page-section red-bg"/>
 
-    <VigotechDocsSection
-      class="page-section"
-    />
-    <VideosSection
-      :vigotech-structure="vigotechStructure"
-      class="page-section red-bg"
-    />
-
+    <DocsSection class="page-section"/>
+    <VideosSection :members-structure="membersStructure" class="page-section red-bg"/>
     <ConversationSection class="page-section"/>
-
-
   </div>
 </template>
 
 <script>
-  import VigotechMembersSection from '../components/VigotechMembersSection'
-  import CoverSection from '../components/CoverSection'
-  import CalendarSection from '../components/CalendarSection'
-  import ConversationSection from '../components/ConversationSection'
-  import VideosSection from '../components/VideosSection'
-  import VigotechStructureStatic from '../static/vigotech'
-  import VigotechDocsSection from '../components/VigotechDocsSection'
+import MembersSection from "../components/MembersSection";
+import CoverSection from "../components/CoverSection";
+import CalendarSection from "../components/CalendarSection";
+import ConversationSection from "../components/ConversationSection";
+import VideosSection from "../components/VideosSection";
+import StructureStatic from "../static/members";
+import DocsSection from "../components/DocsSection";
   import Texts from '../static/custom/coruna'
 
-  export default {
-    components: {
-      VigotechDocsSection,
-      VideosSection,
-      ConversationSection,
-      CoverSection,
-      VigotechMembersSection,
-      CalendarSection
-    },
-    data() {
-      return {
-        vigotechStructure: {
-          members: {}
-        },
-        docs: [],
-      }
-    },
-    computed: {
-      vigotechStructureStore() {
-        // Need separate Store value from data value, because of SSR.
-        // asyncData copy values to data and don'y allow to use computed directly
-        return this.$store.state.vigotechStructure
+export default {
+  components: {
+    DocsSection,
+    VideosSection,
+    ConversationSection,
+    CoverSection,
+    MembersSection,
+    CalendarSection
+  },
+  data() {
+    return {
+      membersStructure: {
+        members: {}
       },
-      nextEventGroup() {
-        return this.$store.getters.nextEventGroup
-s     },
-      nextEvents() {
-        return this.$store.getters.nextEvents
-      },
+      docs: []
+    };
+  },
+  computed: {
+    membersStructureStore() {
+      // Need separate Store value from data value, because of SSR.
+      // asyncData copy values to data and don'y allow to use computed directly
+      return this.$store.state.membersStructure;
+    },
+    nextEventGroup() {
+      return this.$store.getters.nextEventGroup;
+      s;
+    },
+    nextEvents() {
+      return this.$store.getters.nextEvents;
+    },
       texts() {
         return Texts.coverSection
       }
-    },
-    watch: {
-      vigotechStructureStore(newValue, oldValue) {
-        // Need separate Store value from data value, because of SSR.
-        // asyncData copy values to data and don'y allow to use computed directly
-        this.vigotechStructure = newValue
-      }
-    },
-    mounted() {
-      this.$store.dispatch('loadData');
+  },
+  watch: {
+    membersStructureStore(newValue, oldValue) {
+      // Need separate Store value from data value, because of SSR.
+      // asyncData copy values to data and don'y allow to use computed directly
+      this.membersStructure = newValue;
+    }
+  },
+  mounted() {
+    this.$store.dispatch("loadData");
 
-      if ($nuxt.$route.hash) {
-        this.scrollToHash()
-      }
-    },
-    async asyncData(context) {
-      return {
-        vigotechStructure: VigotechStructureStatic,
-      }
-    },
-    methods: {
-      scrollToHash () {
-        var hash = $nuxt.$route.hash
-        this.$nextTick(() => {
-          this.$scrollTo(hash, 500)
-        })
-      }
-    },
-
+    if ($nuxt.$route.hash) {
+      this.scrollToHash();
+    }
+  },
+  async asyncData(context) {
+    return {
+      membersStructure: StructureStatic
+    };
+  },
+  methods: {
+    scrollToHash() {
+      var hash = $nuxt.$route.hash;
+      this.$nextTick(() => {
+        this.$scrollTo(hash, 500);
+      });
+    }
   }
+};
 </script>

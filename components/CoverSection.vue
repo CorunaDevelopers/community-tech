@@ -18,19 +18,12 @@
             </h2>
 
             <no-ssr>
-              <VigotechNextEvent
-                v-if="nextEvents.length > 0"
-                :next-events="nextEvents"
-              />
+              <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
             </no-ssr>
 
             <div class="down-wrapper">
-              <a
-                v-scroll-to="'#grupos'"
-                href="#"
-                class="down"
-              >
-                <i class="fa fa-chevron-down" />
+              <a v-scroll-to="'#grupos'" href="#" class="down">
+                <i class="fa fa-chevron-down"/>
               </a>
             </div>
           </div>
@@ -41,18 +34,20 @@
 </template>
 
 <script>
-  import VigotechNextEvent from "./VigotechNextEvent";
-  export default {
-    name: 'CoverSection',
-    components: {
-      VigotechNextEvent
+import NextEvent from "./NextEvent";
+export default {
+  name: "CoverSection",
+  components: {
+    NextEvent
+  },
+  props: {
+    nextEvents: {
+      type: [Array],
+      required: false,
+      default: () => {
+        return [];
+      }
     },
-    props: {
-      nextEvents: {
-        type: [Array],
-        required: false,
-        default: () => {return []}
-      },
       texts: { 
         type: Object,
         default:() => ({
@@ -64,6 +59,6 @@
                   }
               })
         }
-    }
   }
+};
 </script>

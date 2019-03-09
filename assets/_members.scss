@@ -1,5 +1,5 @@
-.vigotech-member {
-  .vigotech-next-event {
+.member {
+  .next-event {
     i {
       @include fade-animation(1s);
     }
@@ -14,13 +14,9 @@
     }
   }
 
-
-
-  .vigotech-next-event {
+  .next-event {
     position: absolute;
     top: 0;
     left: 0;
   }
 }
-
-

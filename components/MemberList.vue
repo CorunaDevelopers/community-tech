@@ -1,6 +1,6 @@
 <template>
-  <div class="vigotech-member-list row">
-    <vigotech-member
+  <div class="member-list row">
+    <member
       v-for="(member, key) in members"
       :member="member"
       :key="key"
@@ -12,17 +12,17 @@
 </template>
 
 <script>
-import VigotechMember from "./VigotechMember";
+import Member from "./Member";
 export default {
-  name: 'VigotechMemberList',
+  name: "MemberList",
   components: {
-    VigotechMember
+    Member
   },
   props: {
     members: {
       type: [Array, Object],
       required: true
     }
-  },
-}
+  }
+};
 </script>
