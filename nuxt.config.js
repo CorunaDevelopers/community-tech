@@ -21,12 +21,7 @@ const routerBase =
 module.exports = {
   ...routerBase,
   mode: 'universal',
-  env: {
-    MEMBERS_SOURCE: process.env.MEMBERS_SOURCE,
-    MEMBERS_SOURCE_FILE: process.env.MEMBERS_SOURCE_FILE,
-    MEMBERS_SOURCE_GENERATED: process.env.MEMBERS_SOURCE_GENERATED,
-    MEMBERS_SOURCE_GENERATED_FILE: process.env.MEMBERS_SOURCE_GENERATED_FILE,
-    MEETUP_API_BASE: process.env.MEETUP_API_BASE
+  env: { ...process.env
   },
   /*
    ** Headers of the page

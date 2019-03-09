@@ -18,6 +18,7 @@ import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
 import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
+  import Texts from '../static/custom/coruna'
 
 export default {
   components: {
@@ -48,7 +49,10 @@ export default {
     },
     nextEvents() {
       return this.$store.getters.nextEvents;
-    }
+    },
+      texts() {
+        return Texts.coverSection
+      }
   },
   watch: {
     membersStructureStore(newValue, oldValue) {

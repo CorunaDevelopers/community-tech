@@ -4,10 +4,18 @@
       <div class="row">
         <div class="col-xs-12 content-wrapper">
           <div class="content">
-            <img src="logo_white.jpg" alt="Vigo Tech Alliance" class="logo">
-            <h1>Vigo Tech Alliance</h1>
+            <img
+              :src="texts.logo.src"
+              :alt="texts.logo.alt "
+              class="logo"
+            >
+            <h1>
+              {{ texts.title }}
+            </h1>
 
-            <h2>Os grupos de tecnoloxía de Vigo facemos piña para promover a tecnoloxía na cidade</h2>
+            <h2>
+              {{ texts.description }}
+            </h2>
 
             <no-ssr>
               <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
@@ -39,7 +47,18 @@ export default {
       default: () => {
         return [];
       }
-    }
+    },
+      texts: { 
+        type: Object,
+        default:() => ({
+                title: "",
+                description: "",
+                logo: {
+                    src: "",
+                    alt: ""
+                  }
+              })
+        }
   }
 };
 </script>

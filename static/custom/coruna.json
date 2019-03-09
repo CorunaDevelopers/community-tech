@@ -1,0 +1,10 @@
+{
+	"coverSection" : {
+		"title": "CoruñaTech Alliance",
+  		"description": "Os grupos de tecnoloxía de Coruña facemos piña para promover a tecnoloxía na cidade",
+  		"logo": {
+  			"alt" : "CoruñaTech Alliance",
+  			"src" : "logo_white.jpg"
+  		}		
+	}
+}
