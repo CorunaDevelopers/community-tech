@@ -5,16 +5,16 @@
         <div class="col-xs-12 content-wrapper">
           <div class="content">
             <img
-              src="logo_white.jpg"
-              alt="Vigo Tech Alliance"
+              :src="texts.logo.src"
+              :alt="texts.logo.alt "
               class="logo"
             >
             <h1>
-              Vigo Tech Alliance
+              {{ texts.title }}
             </h1>
 
             <h2>
-              Os grupos de tecnoloxía de Vigo facemos piña para promover a tecnoloxía na cidade
+              {{ texts.description }}
             </h2>
 
             <no-ssr>
@@ -52,7 +52,18 @@
         type: [Array],
         required: false,
         default: () => {return []}
-      }
+      },
+      texts: { 
+        type: Object,
+        default:() => ({
+                title: "",
+                description: "",
+                logo: {
+                    src: "",
+                    alt: ""
+                  }
+              })
+        }
     }
   }
 </script>

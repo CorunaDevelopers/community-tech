@@ -2,6 +2,7 @@
   <div>
     <CoverSection
       :next-events="nextEvents"
+      :texts="texts"
       class="page-section"
     />
     <VigotechMembersSection
@@ -32,6 +33,7 @@
   import VideosSection from '../components/VideosSection'
   import VigotechStructureStatic from '../static/vigotech'
   import VigotechDocsSection from '../components/VigotechDocsSection'
+  import Texts from '../static/custom/coruna'
 
   export default {
     components: {
@@ -47,7 +49,7 @@
         vigotechStructure: {
           members: {}
         },
-        docs: []
+        docs: [],
       }
     },
     computed: {
@@ -61,6 +63,9 @@
 s     },
       nextEvents() {
         return this.$store.getters.nextEvents
+      },
+      texts() {
+        return Texts.coverSection
       }
     },
     watch: {
