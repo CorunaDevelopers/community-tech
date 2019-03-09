@@ -18,7 +18,9 @@ import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
 import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
-import Texts from '../static/custom/coruna'
+
+var Config = require('../static/custom/config');
+var Texts = require(`../static/custom/${Config.city}.json`);
 
 export default {
   components: {
