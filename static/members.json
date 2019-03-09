@@ -1,6 +1,6 @@
 {
   "name": "VigoTech Alliance",
-  "logo": "https://github.com/VigoTech/Design-elements/blob/master/01%20IDENTIDAD%20CORPORATIVA/01%20EXPORT/PNG/Logo%20VIGOTECH_avatar_redondo.png?raw=true",
+  "logo": "https://github.com/VigoTech/Design-elements/blob/master/01%20IDENTIDAD%20CORPORATIVA/01%20EXPORT/PNG/Logo%20avatar_redondo.png?raw=true",
   "sticker": "http://hexb.in/hexagons/vigotech.png",
   "links": {
     "web": "https://vigotech.org/",
@@ -205,7 +205,6 @@
           "source": "https://replay.teltek.es/podcast/series/58af67c7a7bc283f008b456c/collection.xml"
         }
       ]
-
     },
     "uxgalicia": {
       "name": "UX Galicia",

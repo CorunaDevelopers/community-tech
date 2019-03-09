@@ -1,14 +1,12 @@
 <template>
   <div>
     <nuxt/>
-    <Menu />
+    <Menu/>
     <footer id="page-footer">
       <p>Tema personalizado pola empresa local Opsou.</p>
-      <a
-        href="https://vigotech.org"
-        class="vigotech-claim vigotech-dark"
-      >
-        Feito con <i class="vt-pinecone" /> en <strong>Vigo</strong>
+      <a href="https://vigotech.org" class="claim dark">Feito con
+        <i class="vt-pinecone"/> en
+        <strong>Vigo</strong>
       </a>
     </footer>
 
@@ -25,46 +23,39 @@
       @clicked-accept="onCookieClickedAccept"
     >
       <!-- Optional -->
-      <div slot="postponeContent">
-        &times;
+      <div slot="postponeContent">&times;</div>
+
+      <!-- Optional -->
+      <div
+        slot="message"
+      >Empregamos cookies propias e de terceiros para mellorar a experiencia de usuario.
+        <router-link to="/post/legal">Saber máis</router-link>
       </div>
 
       <!-- Optional -->
-      <div slot="message">
-        Empregamos cookies propias e de terceiros para mellorar a experiencia de usuario. <router-link to="/post/legal">Saber máis</router-link>
-      </div>
+      <div slot="declineContent">Non acepto</div>
 
       <!-- Optional -->
-      <div slot="declineContent">
-        Non acepto
-      </div>
-
-      <!-- Optional -->
-      <div slot="acceptContent">
-        Ok, adiante
-      </div>
+      <div slot="acceptContent">Ok, adiante</div>
     </vue-cookie-accept-decline>
   </div>
 </template>
 
 <script>
-  import Menu from '~/components/Menu'
-  export default {
-    components: {
-      Menu
+import Menu from "~/components/Menu";
+export default {
+  components: {
+    Menu
+  },
+  methods: {
+    onCookieStatus(status) {
+      this.$store.commit("setCookieStatus", status);
+      if (status == "accept") {
+        this.$ga.enable();
+        this.$ga.page(this.$router);
+      }
     },
-    methods: {
-      onCookieStatus(status) {
-        this.$store.commit('setCookieStatus', status);
-        if (status == 'accept') {
-          this.$ga.enable();
-          this.$ga.page(this.$router);
-        }
-      },
-      onCookieClickedAccept() {
-
-      },
-
-    }
+    onCookieClickedAccept() {}
   }
+};
 </script>
