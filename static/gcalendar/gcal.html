@@ -14,6 +14,7 @@
   <script>
 
     $(document).ready(function () {
+      console.log('GCAL', window)
 
       $('#calendar').fullCalendar({
 
@@ -25,9 +26,11 @@
 
         displayEventTime: false, // don't show the time column in list view
 
-        googleCalendarApiKey: 'AIzaSyD0RDcErlth3OiJPyunH3dovUDK1KTh4rA',
+        googleCalendarApiKey: process.env.GCALENDAR_APIKEY,
+        // googleCalendarApiKey: 'AIzaSyD0RDcErlth3OiJPyunH3dovUDK1KTh4rA',
 
-        events: 'orestes.io_fj8ev1vakdnl8l8o6jeljhof1s@group.calendar.google.com',
+        events: process.env.GCALENDAR_ID,
+        // events: 'orestes.io_fj8ev1vakdnl8l8o6jeljhof1s@group.calendar.google.com',
 
         locale: 'gl',
 
