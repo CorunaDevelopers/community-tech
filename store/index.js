@@ -10,6 +10,7 @@ export const mutations = {
     state.membersStructure = payload;
   },
   setCookieStatus(state, payload) {
+    console.log("setCookieStatus method");
     state.cookieStatus = payload;
   }
 };

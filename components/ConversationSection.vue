@@ -16,34 +16,33 @@
 
           <div class="social">
             <a
-              href="http://twitter.com/vigotechallianc"
+              :href="'https://twitter.com/' + texts.globals.twitter.account"
               title="Twitter"
             >
               <i class="fa fa-twitter fa-2x" />
             </a>
 
             <a
-              href="mailto:alliance@vigotech.org"
-              title="Email alliance@vigotech.org"
+              :href="`mailto:${texts.globals.email}`"
+              :title="'Email ' + texts.globals.email"
             >
               <i class="fa fa-envelope-o fa-2x" />
             </a>
 
             <a
-              href="https://github.com/VigoTech"
+              :href="texts.globals.project_github"
               title="GitHub"
             >
               <i class="fa fa-github fa-2x" />
             </a>
           </div>
-
           <div class="row">
             <div class="col-xs-12 col-sm-6 col">
               <div class="section-content section-content-center">
                 <p>Aberto a todo o mundo, é o punto de encontro virtual de todos os grupos e un bo sitio para facer un pouco de networking:</p>
 
                 <p>
-                  <a href="https://vigotechalliance.slack.com">
+                  <a :href="texts.globals.slack">
                     <img
                       src="slack.png"
                       alt="Slack"
@@ -63,18 +62,19 @@
             </div>
             <div class="col-xs-12 col-sm-6 col">
               <a
+                :href="'https://twitter.com/' + texts.globals.twitter.account"
                 class="twitter-timeline"
                 data-theme="light"
                 data-height="400"
                 data-width="400"
                 data-border-color="#e84a5f"
                 data-chrome="nofooter"
-                href="https://twitter.com/VigoTechAllianc?ref_src=twsrc%5Etfw"
+                
               >
-                Tweets by VigoTech Alliance
+                Tweets by {{ texts.globals.name_community }}
               </a>
               <script
-                v-if="cookieStatus"
+                v-if="cookieStatus=='accept'"
                 async
                 src="https://platform.twitter.com/widgets.js"
                 charset="utf-8" />
@@ -89,9 +89,20 @@
 <script>
   export default {
     name: 'ConversationSection',
+    props:{
+      texts: { 
+        type: Object,
+        default:() => ({
+          "conversationSection": {
+                href_twitter: "",
+                email: ""
+              }
+          })
+      }
+    },
     computed: {
       cookieStatus() {
-        return this.$store.state.cookieStatus
+        return this.$store.state.cookieStatus;
       }
     }
   }

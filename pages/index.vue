@@ -6,7 +6,7 @@
 
     <DocsSection class="page-section"/>
     <VideosSection :members-structure="membersStructure" class="page-section red-bg"/>
-    <ConversationSection class="page-section"/>
+    <ConversationSection :texts="texts" class="page-section"/>
   </div>
 </template>
 
@@ -16,11 +16,11 @@ import CoverSection from "../components/CoverSection";
 import CalendarSection from "../components/CalendarSection";
 import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
-import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
 
-var Config = require('../static/custom/config');
-var Texts = require(`../static/custom/${Config.city}.json`);
+var Config = require('../config');
+var Texts = require(`../static/communities/${Config.city}.json`);
+var StructureStatic = require(`../static/members/${Config.city}/members.json`);
 
 export default {
   components: {
@@ -47,13 +47,12 @@ export default {
     },
     nextEventGroup() {
       return this.$store.getters.nextEventGroup;
-      s;
     },
     nextEvents() {
       return this.$store.getters.nextEvents;
     },
     texts() {
-      return Texts.coverSection
+      return Texts
     }
   },
   watch: {
@@ -85,3 +84,4 @@ export default {
   }
 };
 </script>
+
