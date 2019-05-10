@@ -17,9 +17,7 @@
               {{ texts.description }}
             </h2>
 
-            <no-ssr>
-              <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
-            </no-ssr>
+            <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
 
             <div class="down-wrapper">
               <a v-scroll-to="'#grupos'" href="#" class="down">
@@ -44,9 +42,7 @@ export default {
     nextEvents: {
       type: [Array],
       required: false,
-      default: () => {
-        return [];
-      }
+      default: () => []
     },
       texts: { 
         type: Object,

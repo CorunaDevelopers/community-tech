@@ -7,6 +7,12 @@
     <DocsSection class="page-section"/>
     <VideosSection :members-structure="membersStructure" class="page-section red-bg"/>
     <ConversationSection class="page-section"/>
+
+    <FriendsSection
+      v-if="Object.keys(vigotechFriends).length > 0"
+      :friends="vigotechFriends"
+      class="page-section red-bg"
+    />
   </div>
 </template>
 
@@ -19,6 +25,7 @@ import VideosSection from "../components/VideosSection";
 import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
 import Texts from '../static/custom/coruna'
+import FriendsSection from '../components/FriendsSection'
 
 export default {
   components: {
@@ -27,53 +34,46 @@ export default {
     ConversationSection,
     CoverSection,
     MembersSection,
-    CalendarSection
+    CalendarSection,
+    FriendsSection
   },
   data() {
     return {
-      membersStructure: {
-        members: {}
-      },
-      docs: []
+      docs: [],
+      nextEventsStatic: []
     };
   },
   computed: {
-    membersStructureStore() {
-      // Need separate Store value from data value, because of SSR.
-      // asyncData copy values to data and don'y allow to use computed directly
-      return this.$store.state.membersStructure;
+    membersStructure() {
+      return this.$store.state.membersStructure
     },
     nextEventGroup() {
       return this.$store.getters.nextEventGroup;
-      s;
     },
     nextEvents() {
       return this.$store.getters.nextEvents;
     },
+    vigotechFriends() {
+      return this.$store.state.friends;
+    },
     texts() {
-      return Texts.coverSection
-    }
-  },
-  watch: {
-    membersStructureStore(newValue, oldValue) {
-      // Need separate Store value from data value, because of SSR.
-      // asyncData copy values to data and don'y allow to use computed directly
-      this.membersStructure = newValue;
+      return Texts.coverSection;
     }
   },
   mounted() {
-    this.$store.dispatch("loadData");
 
     if ($nuxt.$route.hash) {
       this.scrollToHash();
     }
   },
-  async asyncData(context) {
-    return {
-      membersStructure: StructureStatic
-    };
+  serverPrefetch () {
+    return this.fetchData()
   },
   methods: {
+    fetchData () {
+      this.$store.dispatch('loadData');
+      return this.$store.dispatch('loadFriends');
+    },
     scrollToHash() {
       var hash = $nuxt.$route.hash;
       this.$nextTick(() => {

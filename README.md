@@ -60,9 +60,20 @@ O apartado _events_ pode ter duas formas
   "meetupid": "AIndustriosa"
 }
 ```
+<<<<<<< HEAD
 
 - Ou para eventos extraido dun json externo
 
+=======
+* Para eventos que se extraen mediante a api de Eventbrite
+```
+"events": {
+  "type": "eventbrite",
+  "eventbriteid": "17365087639"
+}
+```
+* Ou para eventos extraido dun json externo
+>>>>>>> upstream/source
 ```
 "events": {
   "type": "json",
