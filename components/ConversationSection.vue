@@ -93,10 +93,6 @@
       texts: { 
         type: Object,
         default:() => ({
-          "conversationSection": {
-                href_twitter: "",
-                email: ""
-              }
           })
       }
     },
