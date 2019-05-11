@@ -3,7 +3,7 @@
     <nuxt/>
     <Menu :texts="texts" />
     <footer id="page-footer">
-      <p>Tema personalizado pola empresa local Opsou.</p>
+      <p>Tema personalizado pola empresa Opsou e finalizado pola comunidade de CoruñaTech.</p>
       <a :href="texts.globals.home_url" class="claim dark">
         Feito con
         <i class="vt-pinecone"/> en

@@ -3,7 +3,7 @@
     <div class="page-header-content row">
       <div class="col-xs-3">
         <a href="/">
-          <img src="logo.png" alt=" Alliance">
+          <img class="logo" src="logo.png" alt=" Alliance">
         </a>
       </div>
       <div class="col-xs-8">

@@ -35,7 +35,7 @@
                   <a
                     :href="texts.globals.slack.invitation"
                     class="btn"
-                  >Consegue unha invitación no teu correo clickando aquí</a>
+                  >Únete ao noso Slack clickando aquí</a>
                 </p>
               </div>
             </div>
