@@ -18,7 +18,7 @@ body {
   font-family: "Raleway", Arial sans-serif; }
 
 .fc-event {
-  background: #ff4260;
+  background: #5386c7;
   border: 0;
   font-family: "Raleway", Arial sans-serif; }
   .fc-event .fc-title {
@@ -29,7 +29,7 @@ body {
     font-weight: bold; }
 
 .fc-event-dot {
-  background: #ff4260; }
+  background: #5386c7; }
 
 .fc-list-item-title {
   font-size: 18px; }
@@ -41,7 +41,7 @@ body {
   background: #ffdbe1; }
 .fc th.fc-day-header {
   padding: 5px 10px;
-  background: #ff4260;
+  background:#5386c7;
   color: #FFF; }
 .fc td.fc-sun {
   background: #DDDDDD; }

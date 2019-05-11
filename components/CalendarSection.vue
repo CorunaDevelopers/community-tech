@@ -23,7 +23,7 @@
           </div>
           <span class="view-more">
             <a
-              href="https://calendar.google.com/calendar/ical/orestes.io_fj8ev1vakdnl8l8o6jeljhof1s%40group.calendar.google.com/public/basic.ics"
+              href="https://calendar.google.com/calendar/ical/corunadevelopers%40gmail.com/public/basic.ics"
               class="btn btn-white"
             >
               Preme aquí para acceder no formato iCal
