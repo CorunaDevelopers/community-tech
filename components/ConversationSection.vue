@@ -44,7 +44,7 @@
                 <p>
                   <a :href="texts.globals.slack">
                     <img
-                      src="slack.png"
+                      :src="texts.globals.slack_image_src"
                       alt="Slack"
                     >
                   </a>
