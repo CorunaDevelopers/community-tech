@@ -4,22 +4,24 @@ const markdown = require('./markdown');
 
 const markdownFiles = markdown.getFiles();
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/',
-    baseUrl: 'https://vigotech.org/'
-  }
-} : {
-  router: {
-    base: '/',
-  }
-}
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/',
+          baseUrl: process.env.BASE_URL
+        }
+      }
+    : {
+        router: {
+          base: '/'
+        }
+      };
 
 module.exports = {
   ...routerBase,
   mode: 'universal',
-  env: { ...process.env
-  },
+  env: { ...process.env },
   /*
    ** Headers of the page
    */

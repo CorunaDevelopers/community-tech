@@ -3,7 +3,6 @@
     <PageHeader title="Charlas en video"/>
 
     <section id="videos">
-
       <div class="wrap container-fluid group-anchors">
         <a
           v-for="(group, groupkey) in videosByGroup"
@@ -11,28 +10,16 @@
           :key="groupkey"
           class="group-anchor"
         >
-          <img
-            :src="group.logo"
-            :alt="group.name"
-            class="member-logo"
-          >
+          <img :src="group.logo" :alt="group.name" class="member-logo">
         </a>
       </div>
-
 
       <div class="wrap container-fluid">
         <div class="row">
           <div class="col-xs-12 content-wrapper">
             <div class="section-content section-content-center">
-              <section
-                v-for="(group, groupkey) in videosByGroup"
-                :key="groupkey"
-                class="group"
-              >
-                <a
-                  :name="`group-${group.key}`"
-                  class="anchor"
-                />
+              <section v-for="(group, groupkey) in videosByGroup" :key="groupkey" class="group">
+                <a :name="`group-${group.key}`" class="anchor"/>
                 <header class="group-header">
                   <div class="logo-wrapper">
                     <img :src="group.logo" :alt="group.name" class="member-logo">
@@ -72,9 +59,11 @@
 import PageHeader from "../components/PageHeader";
 import VideoPlayer from "../components/VideoPlayer";
 
-var Config = require('../config');
-var Texts = require(`../static/communities/${Config.city}.json`);
-var StructureStatic = require(`../static/members/${Config.city}/members.json`);
+const Config = require("../config");
+const Texts = require(`../static/communities/${Config.city}.json`);
+const StructureStatic = require(`../static/members/${
+  Config.city
+}/members.json`);
 
 export default {
   components: {
@@ -82,18 +71,20 @@ export default {
     PageHeader
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
     videosByGroup() {
       const groups = [];
 
       for (let groupKey in this.membersStructure.members) {
-        let group = JSON.parse(JSON.stringify(this.membersStructure.members[groupKey]))
+        let group = JSON.parse(
+          JSON.stringify(this.membersStructure.members[groupKey])
+        );
         const videos = [];
 
         for (let videoKey in group.videoList) {
-          let video = group.videoList[videoKey]
+          let video = group.videoList[videoKey];
           videos[video.pubDate] = video;
         }
 
@@ -108,7 +99,7 @@ export default {
 
         if (Object.keys(videosSortedByDate).length > 0) {
           group.videoList = videosSortedByDate;
-          group.key = groupKey
+          group.key = groupKey;
           groups.push(group);
         }
       }
@@ -116,17 +107,16 @@ export default {
     },
     membersStructure() {
       return this.$store.state.membersStructure;
-    },
+    }
   },
   mounted() {},
-  serverPrefetch () {
-    return this.fetchData()
+  serverPrefetch() {
+    return this.fetchData();
   },
   methods: {
     fetchData() {
-      return this.$store.dispatch('loadData')
+      return this.$store.dispatch("loadData");
     }
   }
-
 };
 </script>

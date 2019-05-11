@@ -1,0 +1,50 @@
+{
+<<<<<<< HEAD
+	"coverSection" : {
+		"title": "CoruñaTech Alliance",
+  		"description": "Os grupos de tecnoloxía de Coruña facemos piña para promover a tecnoloxía na cidade",
+  		"logo": {
+  			"alt" : "CoruñaTech Alliance",
+  			"src" : "img/coruna/corunaTech_inverte.png"
+  		}		
+	},
+	"globals" : {
+		"email": "corunadevelopers@gmail.com",
+		"project_github": "https://github.com/CorunaDevelopers",
+		"slack": "https://corunadevelopers.slack.com",
+		"slack_image_src": "img/coruna/corunaTech_slack.png",
+		"name_community": "CoruñaTech Alliance",
+		"twitter": {
+			"account": "corunadev"
+		}
+	}
+}
+=======
+  "coverSection": {
+    "title": "CoruñaTech Alliance",
+    "description": "Os grupos de tecnoloxía de Coruña facemos piña para promover a tecnoloxía na cidade",
+    "logo": {
+      "alt": "CoruñaTech Alliance",
+      "src": "logo_white.jpg"
+    }
+  },
+  "globals": {
+    "email": "corunadevelopers@gmail.com",
+    "project_github": "https://github.com/CorunaDevelopers",
+    "slack": {
+      "url": "https://corunadevelopers.slack.com",
+      "invitation": "",
+      "code_of_conduct": ""
+    },
+    "name_community": "CoruñaTech Alliance",
+    "twitter": {
+      "account": "corunadev"
+    },
+    "slack_invitation": "",
+    "manifest": "",
+    "code_of_conduct": "",
+    "entry_conditions": "",
+    "home_url": "http://corunadevelopers.github.io"
+  }
+}
+>>>>>>> a6c47270021a42bd0cb76f6b8842152ace275d42

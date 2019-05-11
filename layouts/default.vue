@@ -4,9 +4,10 @@
     <Menu/>
     <footer id="page-footer">
       <p>Tema personalizado pola empresa local Opsou.</p>
-      <a href="https://vigotech.org" class="claim dark">Feito con
+      <a :href="texts.globals.home_url" class="claim dark">
+        Feito con
         <i class="vt-pinecone"/> en
-        <strong>Vigo</strong>
+        <strong>{{ texts.globals.city }}</strong>
       </a>
       <br>
       <button v-if="showButtonRemoveCookies" @click="removeCookie">Eliminar Cookie de navegador</button>
@@ -31,9 +32,8 @@
       <div slot="postponeContent">&times;</div>
 
       <!-- Optional -->
-      <div
-        slot="message"
-      >Empregamos cookies propias e de terceiros para mellorar a experiencia de usuario.
+      <div slot="message">
+        Empregamos cookies propias e de terceiros para mellorar a experiencia de usuario.
         <router-link to="/post/legal">Saber máis</router-link>
       </div>
 
@@ -47,6 +47,8 @@
 </template>
 
 <script>
+const Config = require("../static/custom/config");
+const Texts = require(`../static/communities/${Config.city}.json`);
 import Menu from "~/components/Menu";
 export default {
   components: {
@@ -54,15 +56,20 @@ export default {
   },
   data() {
     return {
-      showButtonRemoveCookies : true
+      showButtonRemoveCookies: true
+    };
+  },
+  computed: {
+    texts() {
+      return Texts;
     }
   },
   methods: {
     onCookieStatus(status) {
       this.$store.commit("setCookieStatus", status);
-      if (status !== null){
+      if (status !== null) {
         this.showButtonRemoveCookies = true;
-      }else{
+      } else {
         this.showButtonRemoveCookies = false;
       }
       if (status == "accept") {
@@ -71,13 +78,13 @@ export default {
         this.$ga.page(this.$router);
       }
     },
-    removeCookie () {
+    removeCookie() {
       this.showButtonRemoveCookies = false;
       this.$store.commit("setCookieStatus", status);
       //remove key in localStorage
-      this.$refs.cookieBanner.removeCookie()
+      this.$refs.cookieBanner.removeCookie();
     },
-    onCookieRemovedCookie () {
+    onCookieRemovedCookie() {
       this.showButtonRemoveCookies = false;
       //Evaluates the cookie status and shows the panel if proper conditions are met
       this.$refs.cookieBanner.init();

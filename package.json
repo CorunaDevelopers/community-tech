@@ -1,8 +1,8 @@
 {
-  "name": "vigotech.github.io-nuxt",
+  "name": "corunatech",
   "version": "1.0.0",
-  "description": "VigoTech Alliance Website",
-  "author": "Sergio Carracedo",
+  "description": "CoruñaTech Website",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "nuxt",

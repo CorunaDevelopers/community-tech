@@ -1,4 +1,4 @@
-import VigotechFriends from '../static/friends';
+import Friends from '../static/friends';
 
 var Config = require('../static/custom/config');
 var CitytechStructure = require(`../static/members/${Config.city}/members-generated.json`);
@@ -15,21 +15,21 @@ export const mutations = {
   loadData(state, payload) {
     state.membersStructure = payload;
   },
-  loadFriends (state, payload) {
-    state.friends = payload
+  loadFriends(state, payload) {
+    state.friends = payload;
   },
   setCookieStatus(state, payload) {
-    console.log("setCookieStatus method");
+    console.log('setCookieStatus method');
     state.cookieStatus = payload;
   }
 };
 
 export const actions = {
-  loadData (store) {
-    return store.commit('loadData', CitytechStructure)
+  loadData(store) {
+    return store.commit('loadData', CitytechStructure);
   },
-  loadFriends (store) {
-    return store.commit('loadFriends', VigotechFriends)
+  loadFriends(store) {
+    return store.commit('loadFriends', Friends);
   }
 };
 
@@ -55,7 +55,7 @@ export const getters = {
       let group = groupsByNextEvent[groupKey];
       try {
         if (group.nextEvent === undefined || group.nextEvent.date === undefined) {
-          continue
+          continue;
         }
 
         let date = group.nextEvent.date;

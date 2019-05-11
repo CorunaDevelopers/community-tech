@@ -10,26 +10,23 @@
           <div class="section-content section-content-center">
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col">
-                <a
-                  href="https://github.com/VigoTech/documentos/blob/master/manifiesto.md"
-                  class="btn btn-block btn-lg"
-                >Manifiesto</a>
+                <a :href="texts.globals.manifest" class="btn btn-block btn-lg">Manifiesto</a>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col">
                 <a
-                  href="https://github.com/VigoTech/documentos/blob/master/codigodeconducta.md"
+                  :href="texts.globals.code_of_conduct"
                   class="btn btn-block btn-lg"
                 >Código de conducta</a>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col">
                 <a
-                  href="https://github.com/VigoTech/documentos/blob/master/condicionsentrada.md"
+                  :href="texts.globals.entry_conditions"
                   class="btn btn-block btn-lg"
                 >Cóndicions de entrada</a>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col">
                 <a
-                  href="https://github.com/VigoTech/documentos/blob/master/conducta_slack.md"
+                  :href="texts.globals.slack.code_of_conduct"
                   class="btn btn-block btn-lg"
                 >Código de conducta en Slack</a>
               </div>
@@ -44,6 +41,12 @@
 <script>
 // import docs from '../docs'
 export default {
-  name: "DocsSection"
+  name: "DocsSection",
+  props: {
+    texts: {
+      type: Object,
+      default: () => ({})
+    }
+  }
 };
 </script>
