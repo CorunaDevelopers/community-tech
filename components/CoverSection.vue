@@ -5,16 +5,16 @@
         <div class="col-xs-12 content-wrapper">
           <div class="content">
             <img
-              :src="texts.logo.src"
-              :alt="texts.logo.alt "
+              :src="texts.coverSection.logo.src"
+              :alt="texts.coverSection.logo.alt "
               class="logo"
             >
             <h1>
-              {{ texts.title }}
+              {{ texts.coverSection.title }}
             </h1>
 
             <h2>
-              {{ texts.description }}
+              {{ texts.coverSection.description }}
             </h2>
 
             <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
@@ -44,17 +44,19 @@ export default {
       required: false,
       default: () => []
     },
-      texts: { 
-        type: Object,
-        default:() => ({
-                title: "",
-                description: "",
-                logo: {
-                    src: "",
-                    alt: ""
-                  }
-              })
-        }
+    texts: {
+      type: Object,
+      default:() => ({
+        "coverSection": {
+              title: "",
+              description: "",
+              logo: {
+                  src: "",
+                  alt: ""
+                }
+            }
+        })
+      }
   }
 };
 </script>

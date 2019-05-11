@@ -3,9 +3,9 @@ const colors = require("colors")
 const fs = require('fs')
 const { Events, Videos, Source } = require('metagroup-schema-tools')
 const moment = require('moment')
-const SOURCE_JSON = process.env.VIGOTECH_MEMBERS_SOURCE_FILE
-const GENERATED_JSON = 'static/vigotech-generated.json'
-const JSON_SCHEMA = 'static/vigotech-schema.json'
+const SOURCE_JSON = process.env.MEMBERS_SOURCE_FILE
+const GENERATED_JSON = process.env.MEMBERS_SOURCE_GENERATED_FILE
+const JSON_SCHEMA = process.env.MEMBERS_SCHEMA
 
 
 

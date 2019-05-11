@@ -72,6 +72,10 @@
 import PageHeader from "../components/PageHeader";
 import VideoPlayer from "../components/VideoPlayer";
 
+var Config = require('../config');
+var Texts = require(`../static/communities/${Config.city}.json`);
+var StructureStatic = require(`../static/members/${Config.city}/members.json`);
+
 export default {
   components: {
     VideoPlayer,

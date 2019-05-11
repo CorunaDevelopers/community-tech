@@ -17,6 +17,7 @@ export const mutations = {
     state.friends = payload
   },
   setCookieStatus(state, payload) {
+    console.log("setCookieStatus method");
     state.cookieStatus = payload;
   }
 };

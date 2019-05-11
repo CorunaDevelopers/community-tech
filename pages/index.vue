@@ -6,8 +6,7 @@
 
     <DocsSection class="page-section"/>
     <VideosSection :members-structure="membersStructure" class="page-section red-bg"/>
-    <ConversationSection class="page-section"/>
-
+    <ConversationSection :texts="texts" class="page-section"/>
     <FriendsSection
       v-if="Object.keys(vigotechFriends).length > 0"
       :friends="vigotechFriends"
@@ -22,10 +21,12 @@ import CoverSection from "../components/CoverSection";
 import CalendarSection from "../components/CalendarSection";
 import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
-import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
-import Texts from '../static/custom/coruna'
 import FriendsSection from '../components/FriendsSection'
+
+var Config = require('../config');
+var Texts = require(`../static/communities/${Config.city}.json`);
+var StructureStatic = require(`../static/members/${Config.city}/members.json`);
 
 export default {
   components: {
@@ -45,7 +46,7 @@ export default {
   },
   computed: {
     membersStructure() {
-      return this.$store.state.membersStructure
+      return this.$store.state.membersStructure;
     },
     nextEventGroup() {
       return this.$store.getters.nextEventGroup;
@@ -57,7 +58,7 @@ export default {
       return this.$store.state.friends;
     },
     texts() {
-      return Texts.coverSection;
+      return Texts;
     }
   },
   mounted() {

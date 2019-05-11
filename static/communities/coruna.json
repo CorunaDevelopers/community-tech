@@ -6,5 +6,14 @@
   			"alt" : "CoruñaTech Alliance",
   			"src" : "logo_white.jpg"
   		}		
+	},
+	"globals" : {
+		"email": "corunadevelopers@gmail.com",
+		"project_github": "https://github.com/CorunaDevelopers",
+		"slack": "https://corunadevelopers.slack.com",
+		"name_community": "CoruñaTech Alliance",
+		"twitter": {
+			"account": "corunadev"
+		}
 	}
 }
