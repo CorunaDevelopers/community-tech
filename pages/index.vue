@@ -18,9 +18,8 @@ import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
 import DocsSection from "../components/DocsSection";
 
-var Config = require('../config');
-var Texts = require(`../static/communities/${Config.city}.json`);
-var StructureStatic = require(`../static/members/${Config.city}/members.json`);
+var Config = require('../static/custom/config');
+var Texts = require(`../static/custom/${Config.city}.json`);
 
 export default {
   components: {
@@ -84,4 +83,3 @@ export default {
   }
 };
 </script>
-

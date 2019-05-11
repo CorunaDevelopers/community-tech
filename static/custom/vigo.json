@@ -1,0 +1,10 @@
+{
+	"coverSection" : {
+		"title": "VigoTech Alliance",
+  		"description": "Os grupos de tecnoloxía de Vigo facemos piña para promover a tecnoloxía na cidade",
+  		"logo": {
+  			"alt" : "VigoTech Alliance",
+  			"src" : "logo_white.jpg"
+  		}		
+	}
+}
