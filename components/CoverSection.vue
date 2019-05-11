@@ -5,7 +5,7 @@
         <div class="col-xs-12 content-wrapper">
           <div class="content">
             <img
-              :src="texts.coverSection.logo.src"
+              :src="texts.coverSection.logo.main_src"
               :alt="texts.coverSection.logo.alt "
               class="logo"
             >

@@ -1,7 +1,7 @@
 <template>
   <nav id="menu">
     <a href="./" class="logo">
-      <img src="logo.svg" alt=" Alliance">
+      <img :src="texts.coverSection.logo.inverted_src" alt=" Alliance">
     </a>
     <ul>
       <li>
@@ -29,6 +29,12 @@
 <script>
 export default {
   name: "Menu",
+  props: {
+      texts: {
+          type: Object,
+          default: () => ({})
+      }
+  },
   computed: {
     friends() {
       return this.$store.state.friends;

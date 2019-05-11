@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt/>
-    <Menu/>
+    <Menu :texts="texts" />
     <footer id="page-footer">
       <p>Tema personalizado pola empresa local Opsou.</p>
       <a :href="texts.globals.home_url" class="claim dark">

@@ -4,7 +4,8 @@
     "description": "Os grupos de tecnoloxía de Coruña facemos piña para promover a tecnoloxía na cidade",
     "logo": {
       "alt": "CoruñaTech Alliance",
-      "src": "img/coruna/corunaTech_inverte.png"
+      "main_src": "img/coruna/corunaTech_inverte.png",
+      "inverted_src": "img/coruna/logo_corunatec_2019.png"
     }
   },
   "globals": {
@@ -12,7 +13,7 @@
     "project_github": "https://github.com/CorunaDevelopers",
     "slack": {
       "url": "https://corunadevelopers.slack.com",
-      "img_src": "img/coruna/corunaTech_slack.png",
+      "img_src": "img/coruna/corunatech_slack.png",
       "invitation": "",
       "code_of_conduct": ""
     },
