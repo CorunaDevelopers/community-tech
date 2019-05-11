@@ -24,7 +24,7 @@ import VideosSection from "../components/VideosSection";
 import DocsSection from "../components/DocsSection";
 import FriendsSection from '../components/FriendsSection'
 
-var Config = require('../config');
+var Config = require('../static/custom/config');
 var Texts = require(`../static/communities/${Config.city}.json`);
 var StructureStatic = require(`../static/members/${Config.city}/members.json`);
 

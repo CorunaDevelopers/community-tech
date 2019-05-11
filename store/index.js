@@ -1,5 +1,7 @@
-import VigotechFriends from '../static/friends'
-import VigotechStructure from '../static/vigotech-generated'
+import VigotechFriends from '../static/friends';
+
+var Config = require('../static/custom/config');
+var CitytechStructure = require(`../static/members/${Config.city}/members-generated.json`);
 
 export const state = () => ({
   membersStructure: {
@@ -24,7 +26,7 @@ export const mutations = {
 
 export const actions = {
   loadData (store) {
-    return store.commit('loadData', VigotechStructure)
+    return store.commit('loadData', CitytechStructure)
   },
   loadFriends (store) {
     return store.commit('loadFriends', VigotechFriends)

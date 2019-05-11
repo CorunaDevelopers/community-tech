@@ -1,6 +1,6 @@
 # corunadevelopers.github.io
 
-> Coruña Developers Website
+> City Tech Website
 
 ## Build Setup
 
@@ -9,6 +9,10 @@
 $ yarn install
 
 # rename .env.example to .env and edit using your own config
+# in file custom/config.json write name city, for example coruna. 
+#Create a file into communities folder with coruna.json with all texts of website
+#Into members/coruna/members.json fill all groups of your city
+#Now project work with coruna and vigo city
 
 # prepare date to generate website
 $ yarn prepare
