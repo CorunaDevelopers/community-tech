@@ -25,8 +25,8 @@ import DocsSection from "../components/DocsSection";
 import FriendsSection from "../components/FriendsSection";
 
 const Config = require("../static/custom/config");
-const Texts = require(`../static/communities/${Config.city}.json`);
-const StructureStatic = require(`../static/members/${
+const Texts = require(`../static/custom/${Config.city}.json`);
+const StructureStatic = require(`../static/custom/members/${
   Config.city
 }/members.json`);
 

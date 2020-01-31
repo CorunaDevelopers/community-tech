@@ -47,7 +47,7 @@
 
 <script>
 const Config = require("../static/custom/config");
-const Texts = require(`../static/communities/${Config.city}.json`);
+const Texts = require(`../static/custom/${Config.city}.json`);
 import Menu from "~/components/Menu";
 export default {
   components: {

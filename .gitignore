@@ -79,3 +79,7 @@ dist
 
 # IDE
 .idea
+
+#Code custom to generate project
+static/custom/*
+!static/custom/.gitkeep 
