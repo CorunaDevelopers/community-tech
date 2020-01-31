@@ -79,3 +79,6 @@ dist
 
 # IDE
 .idea
+
+#Code custom to generate project
+custom/
