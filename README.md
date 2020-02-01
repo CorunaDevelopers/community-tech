@@ -6,6 +6,10 @@ Hay que crear obligatoriamente una carpeta custom dentro de static. Podemos incl
 
 This project is a fork from VigoTech.
 
+In branch source has code general, and folder custom is empty, you can fork this project and include your custom files into folder.
+
+In branch coruna_tech is files to generate project coruna_tech
+
 ## Build Setup
 
 ```bash
