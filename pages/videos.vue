@@ -59,9 +59,9 @@
 import PageHeader from "../components/PageHeader";
 import VideoPlayer from "../components/VideoPlayer";
 
-const Config = require("../config");
-const Texts = require(`../static/communities/${Config.city}.json`);
-const StructureStatic = require(`../static/members/${
+const Config = require("../static/custom/config");
+const Texts = require(`../static/custom/${Config.city}.json`);
+const StructureStatic = require(`../static/custom/members/${
   Config.city
 }/members.json`);
 

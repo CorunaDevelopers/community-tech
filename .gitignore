@@ -81,4 +81,4 @@ dist
 .idea
 
 #Code custom to generate project
-custom/
+static/custom/*

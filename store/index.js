@@ -1,7 +1,7 @@
 import Friends from '../static/friends';
 
 var Config = require('../static/custom/config');
-var CitytechStructure = require(`../static/members/${Config.city}/members-generated.json`);
+var CitytechStructure = require(`../static/custom/members/${Config.city}/members-generated.json`);
 
 export const state = () => ({
   membersStructure: {
