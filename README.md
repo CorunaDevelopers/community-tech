@@ -34,8 +34,8 @@ Create a file into static/custom folder with name city, for example coruna.json 
     "description": "Os grupos de tecnoloxía de Coruña xuntámonos para promover a tecnoloxía na cidade",
     "logo": {
       "alt": "CoruñaTech Alliance",
-      "main_src": "img/coruna/logo_corunatec_2019.png",
-      "inverted_src": "img/coruna/logo_corunatec_2019.png"
+      "main_src": "custom/img/coruna/logo_corunatec_2019.png",
+      "inverted_src": "custom/img/coruna/logo_corunatec_2019.png"
     }
   },
   "globals": {
@@ -43,7 +43,7 @@ Create a file into static/custom folder with name city, for example coruna.json 
     "project_github": "https://github.com/CorunaDevelopers",
     "slack": {
       "url": "https://corunadevelopers.slack.com",
-      "img_src": "img/coruna/corunatech_slack.png",
+      "img_src": "custom/img/coruna/corunatech_slack.png",
       "invitation": "https://join.slack.com/t/corunadevelopers/shared_invite/enQtMzAxMzU4MzMwMDMyLThkNWYwMzMzODUzMmE0MDE0MGFhZjIxM2U5MzdkYjhlNTM3ZDZhYjliNTk4NWRhYzYwMzI0MjRlZjUyN2JiN2U",
       "code_of_conduct": ""
     },
