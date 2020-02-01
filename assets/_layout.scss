@@ -90,6 +90,12 @@ img {
   }
 }
 
+.logo {
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
 .wrap {
   box-sizing: border-box;
   max-width: 1200px;
@@ -152,4 +158,8 @@ img {
   .container-fluid {
     padding: 0;
   }
+}
+
+vue-cookie-accept-decline {
+  display: none;
 }

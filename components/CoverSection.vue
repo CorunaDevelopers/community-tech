@@ -5,21 +5,19 @@
         <div class="col-xs-12 content-wrapper">
           <div class="content">
             <img
-              :src="texts.logo.src"
-              :alt="texts.logo.alt "
+              :src="texts.coverSection.logo.main_src"
+              :alt="texts.coverSection.logo.alt "
               class="logo"
             >
             <h1>
-              {{ texts.title }}
+              {{ texts.coverSection.title }}
             </h1>
 
             <h2>
-              {{ texts.description }}
+              {{ texts.coverSection.description }}
             </h2>
 
-            <no-ssr>
-              <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
-            </no-ssr>
+            <NextEvent v-if="nextEvents.length > 0" :next-events="nextEvents"/>
 
             <div class="down-wrapper">
               <a v-scroll-to="'#grupos'" href="#" class="down">
@@ -44,21 +42,21 @@ export default {
     nextEvents: {
       type: [Array],
       required: false,
-      default: () => {
-        return [];
-      }
+      default: () => []
     },
-      texts: { 
-        type: Object,
-        default:() => ({
-                title: "",
-                description: "",
-                logo: {
-                    src: "",
-                    alt: ""
-                  }
-              })
-        }
+    texts: {
+      type: Object,
+      default:() => ({
+        "coverSection": {
+              title: "",
+              description: "",
+              logo: {
+                  src: "",
+                  alt: ""
+                }
+            }
+        })
+      }
   }
 };
 </script>

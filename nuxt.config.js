@@ -4,22 +4,24 @@ const markdown = require('./markdown');
 
 const markdownFiles = markdown.getFiles();
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/',
-    baseUrl: 'https://vigotech.org/'
-  }
-} : {
-  router: {
-    base: '/',
-  }
-}
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/',
+          baseUrl: process.env.BASE_URL
+        }
+      }
+    : {
+        router: {
+          base: '/'
+        }
+      };
 
 module.exports = {
   ...routerBase,
   mode: 'universal',
-  env: { ...process.env
-  },
+  env: { ...process.env },
   /*
    ** Headers of the page
    */
@@ -30,7 +32,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
     bodyAttrs: {
       class: 'layout'
     }

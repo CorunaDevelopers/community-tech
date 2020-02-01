@@ -1,7 +1,13 @@
+import Friends from '../static/friends';
+
+var Config = require('../static/custom/config');
+var CitytechStructure = require(`../static/custom/members/${Config.city}/members-generated.json`);
+
 export const state = () => ({
   membersStructure: {
     members: {}
   },
+  friends: {},
   cookieStatus: false
 });
 
@@ -9,16 +15,21 @@ export const mutations = {
   loadData(state, payload) {
     state.membersStructure = payload;
   },
+  loadFriends(state, payload) {
+    state.friends = payload;
+  },
   setCookieStatus(state, payload) {
+    console.log('setCookieStatus method');
     state.cookieStatus = payload;
   }
 };
 
 export const actions = {
   loadData(store) {
-    this.$axios.get(process.env.MEMBERS_SOURCE_GENERATED).then(response => {
-      store.commit('loadData', response.data);
-    });
+    return store.commit('loadData', CitytechStructure);
+  },
+  loadFriends(store) {
+    return store.commit('loadFriends', Friends);
   }
 };
 
@@ -43,12 +54,18 @@ export const getters = {
     for (let groupKey in groupsByNextEvent) {
       let group = groupsByNextEvent[groupKey];
       try {
+        if (group.nextEvent === undefined || group.nextEvent.date === undefined) {
+          continue;
+        }
+
         let date = group.nextEvent.date;
 
         if (date > new Date().getTime() && date < groupNextEvent.nextEvent.date) {
           groupNextEvent = group;
         }
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     if (groupNextEvent.nextEvent.date < 9999999999999) {
@@ -70,7 +87,7 @@ export const getters = {
         for (let groupKey in groupsByNextEvent) {
           let group = groupsByNextEvent[groupKey];
           try {
-            if (group.nextEvent.date === undefined) {
+            if (group.nextEvent === undefined || group.nextEvent.date === undefined) {
               continue;
             }
 
@@ -83,7 +100,9 @@ export const getters = {
             if (dateString === nowString) {
               groupNextEvents.push(group);
             }
-          } catch (e) {}
+          } catch (e) {
+            console.log(e);
+          }
         }
         return groupNextEvents;
       }

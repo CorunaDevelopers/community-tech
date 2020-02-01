@@ -4,9 +4,14 @@
     <MembersSection :members-structure="membersStructure" class="page-section"/>
     <CalendarSection class="page-section red-bg"/>
 
-    <DocsSection class="page-section"/>
+    <DocsSection :texts="texts" class="page-section"/>
     <VideosSection :members-structure="membersStructure" class="page-section red-bg"/>
-    <ConversationSection class="page-section"/>
+    <ConversationSection :texts="texts" class="page-section"/>
+    <FriendsSection
+      v-if="Object.keys(friends).length > 0"
+      :friends="friends"
+      class="page-section red-bg"
+    />
   </div>
 </template>
 
@@ -16,9 +21,14 @@ import CoverSection from "../components/CoverSection";
 import CalendarSection from "../components/CalendarSection";
 import ConversationSection from "../components/ConversationSection";
 import VideosSection from "../components/VideosSection";
-import StructureStatic from "../static/members";
 import DocsSection from "../components/DocsSection";
-import Texts from '../static/custom/coruna'
+import FriendsSection from "../components/FriendsSection";
+
+const Config = require("../static/custom/config");
+const Texts = require(`../static/custom/${Config.city}.json`);
+const StructureStatic = require(`../static/custom/members/${
+  Config.city
+}/members.json`);
 
 export default {
   components: {
@@ -27,55 +37,47 @@ export default {
     ConversationSection,
     CoverSection,
     MembersSection,
-    CalendarSection
+    CalendarSection,
+    FriendsSection
   },
   data() {
     return {
-      membersStructure: {
-        members: {}
-      },
-      docs: []
+      docs: [],
+      nextEventsStatic: []
     };
   },
   computed: {
-    membersStructureStore() {
-      // Need separate Store value from data value, because of SSR.
-      // asyncData copy values to data and don'y allow to use computed directly
+    membersStructure() {
       return this.$store.state.membersStructure;
     },
     nextEventGroup() {
       return this.$store.getters.nextEventGroup;
-      s;
     },
     nextEvents() {
       return this.$store.getters.nextEvents;
     },
+    friends() {
+      return this.$store.state.friends;
+    },
     texts() {
-      return Texts.coverSection
-    }
-  },
-  watch: {
-    membersStructureStore(newValue, oldValue) {
-      // Need separate Store value from data value, because of SSR.
-      // asyncData copy values to data and don'y allow to use computed directly
-      this.membersStructure = newValue;
+      return Texts;
     }
   },
   mounted() {
-    this.$store.dispatch("loadData");
-
     if ($nuxt.$route.hash) {
       this.scrollToHash();
     }
   },
-  async asyncData(context) {
-    return {
-      membersStructure: StructureStatic
-    };
+  serverPrefetch() {
+    return this.fetchData();
   },
   methods: {
+    fetchData() {
+      this.$store.dispatch("loadData");
+      return this.$store.dispatch("loadFriends");
+    },
     scrollToHash() {
-      var hash = $nuxt.$route.hash;
+      const hash = $nuxt.$route.hash;
       this.$nextTick(() => {
         this.$scrollTo(hash, 500);
       });
