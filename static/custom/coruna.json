@@ -1,0 +1,30 @@
+{
+  "coverSection": {
+    "title": "CoruñaTech Alliance",
+    "description": "Os grupos de tecnoloxía de Coruña xuntámonos para promover a tecnoloxía na cidade",
+    "logo": {
+      "alt": "CoruñaTech Alliance",
+      "main_src": "custom/img/coruna/logo_corunatec_2019.png",
+      "inverted_src": "custom/img/coruna/logo_corunatec_2019.png"
+    }
+  },
+  "globals": {
+    "email": "corunadevelopers@gmail.com",
+    "project_github": "https://github.com/CorunaDevelopers",
+    "slack": {
+      "url": "https://corunadevelopers.slack.com",
+      "img_src": "custom/img/coruna/corunatech_slack.png",
+      "invitation": "https://join.slack.com/t/corunadevelopers/shared_invite/enQtMzAxMzU4MzMwMDMyLThkNWYwMzMzODUzMmE0MDE0MGFhZjIxM2U5MzdkYjhlNTM3ZDZhYjliNTk4NWRhYzYwMzI0MjRlZjUyN2JiN2U",
+      "code_of_conduct": ""
+    },
+    "name_community": "CoruñaTech Alliance",
+    "twitter": {
+      "account": "corunadev"
+    },
+    "city": "A Coruña",
+    "manifest": "",
+    "code_of_conduct": "",
+    "entry_conditions": "",
+    "home_url": "http://corunadevelopers.github.io"
+  }
+}

@@ -81,5 +81,5 @@ dist
 .idea
 
 #Code custom to generate project
-static/custom/*
+#static/custom/*
 !static/custom/.gitkeep 

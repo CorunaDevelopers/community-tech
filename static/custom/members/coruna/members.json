@@ -1,0 +1,122 @@
+{
+  "name": "CoruñaTech",
+  "logo": "./logo.png",
+  "sticker": "http://hexb.in/hexagons/vigotech.png",
+  "links": {
+    "web": "https://corunadevelopers.github.io/",
+    "twitter": "https://twitter.com/corunadev",
+    "mail": "corunadevelopers@gmail.com",
+    "github": "https://twitter.com/corunadev"
+  },
+  "members": {
+    "gpul": {
+      "name": "GPUL",
+      "logo": "./custom/members/images/gpul.png",
+      "links": {
+        "web": "https://gpul.org/",
+        "twitter": "http://twitter.com/gpul_",
+        "mail": "info@gpul.org",
+        "meetup": "https://www.meetup.com/es-ES/GPUL-Labs/",
+        "github": "https://github.com/gpul-org"
+          },
+      "events": {
+        "type": "meetup",
+        "meetupid": "GPUL-Labs"
+      }
+    },
+    "articos": {
+      "name": "Árticos",
+      "logo": "./custom/members/images/articos.png",
+      "links": {
+        "web": "http://articos.es/",
+        "twitter": "https://twitter.com/articos_es"
+      },
+      "events": {
+        "type": "eventbrite",
+        "eventbriteid": "5870808993"
+      }
+    },
+    "corunajug": {
+      "name": "CoruñaJUG",
+      "logo": "./custom/members/images/corunajug.jpeg",
+      "links": {
+        "email": "corunajug@corunajug.org",
+        "twitter": "https://twitter.com/corunajug",
+        "meetup": "https://www.meetup.com/es-ES/CorunaJUG/"
+      },
+      "events": {
+        "type": "meetup",
+        "meetupid": "CorunaJUG"
+      }
+    },
+    "gdgcoruna": {
+      "name": "GDG Coruña",
+      "logo": "./custom/members/images/gdgcoruna.jpeg",
+      "links": {
+        "twitter": "https://twitter.com/gdgcoruna",
+        "meetup": "https://www.meetup.com/es-ES/GDG-Coruna/"
+      },
+      "events": {
+        "type": "meetup",
+        "meetupid": "GDG-Coruna"
+      }
+    },
+    "corunaagile": {
+      "name": "Coruña Agile",
+      "logo": "./custom/members/images/corunaagile.jpeg",
+      "links": {
+        "meetup": "https://www.meetup.com/es-ES/Coruna-Agile/"
+      },
+      "events": {
+        "type": "meetup",
+        "meetupid": "Coruna-Agile"
+      }
+    },
+    "informaticosanonimos": {
+      "name": "Informáticos Anónimos",
+      "logo": "./custom/members/images/informaticosanonimos.jpg",
+      "links": {
+        "twitter": "https://twitter.com/inform_anonimos",
+        "meetup": "https://www.meetup.com/es-ES/Coruna-Agile/"
+      },
+      "events": {
+      }
+    },
+    "bricolabs": {
+      "name": "Bricolabs",
+      "logo": "./custom/members/images/bricolabs.png",
+      "links": {
+        "email": "contacto@bricolabs.cc",
+        "web": "https://bricolabs.cc/",
+        "twitter": "https://twitter.com/brico_labs",
+        "github": "https://www.github.com/brico-labs",
+        "youtube": "https://www.youtube.com/brico_labs"
+      },
+      "events": {
+      }
+    },
+    "hellosisters": {
+      "name": "Hello Sisters",
+      "logo": "./custom/members/images/hellosisters.jpg",
+      "links": {
+        "email": "hello.sisters.contact@gmail.com",
+        "web": "https://hellosisters.github.io/",
+        "twitter": "https://twitter.com/hello_sisters_",
+        "github": "https://www.github.com/hellosisters"
+      },
+      "events": {
+      }
+    },
+    "molab": {
+      "name": "MOLAB",
+      "logo": "./custom/members/images/molab.jpg",
+      "links": {
+        "email": "molabmonkeylab@gmail.com",
+        "twitter": "https://twitter.com/molab_",
+        "github": "https://www.github.com/MolabMonkeyLab"
+      },
+      "events": {
+      }
+    }
+  }
+}
